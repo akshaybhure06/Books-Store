@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Store</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 0px;
+      margin: 0px;
+      width: 100%;
+      height: 100vh;
+      background-image: url("./6872132.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+    }
+    .controls {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      background-color: #d3ff6d;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin: 10px;
+      width: 100%;
+      
+    }
+    .book-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      width: 200px;
+      vertical-align: top;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgb(97, 231, 209);
+    }
+
+    .book-card img {
+      max-width: 100%;
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <label>Filter by Author: </label>
+    <select id="authorFilter" onchange="filterBooksByAuthor()">
+      <option value="All">All</option>
+    </select>
+
+    <label>Sort by Price: </label>
+    <select id="priceSort" onchange="sortBooksByPrice()">
+      <option value="default">Default</option>
+      <option value="asc">Low to High</option>
+      <option value="desc">High to Low</option>
+    </select>
+  </div>
+
+  <div id="mainContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
